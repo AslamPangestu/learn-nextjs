@@ -1,17 +1,20 @@
-import { withRouter } from "next/router";
-import Layout from "../components/MyLayout.js";
+import { useRouter } from 'next/router'
+import Layout from '../components/MyLayout.js'
 
-const Content = withRouter(props => (
-  <div>
-    <h1>{props.router.query.title}</h1>
-    <p>This is the blog post content.</p>
-  </div>
-));
+const Content = () => {
+  const router = useRouter()
+  return (
+    <>
+      <h1>{router.query.title}</h1>
+      <p>This is the blog post content.</p>
+    </>
+  )
+}
 
-const Page = props => (
+const Page = () => (
   <Layout>
     <Content />
   </Layout>
-);
+)
 
-export default Page;
+export default Page
